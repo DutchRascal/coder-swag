@@ -8,12 +8,15 @@
 
 import UIKit
 
-class CategoryCell: UITableViewCell {
+class CategoryCell: UITableViewCell
+{
     
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryTitle: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func updateViews(category: Category)
+    {
+        categoryImage.image = UIImage(named: category.imageName)
+        categoryTitle.text = category.title
     }
 }
